@@ -23,7 +23,7 @@ score2_img = pygame.image.load("img/0.png")
 #colocar a bolinha para rolar
 bola_x = 617
 bola_y = 337
-bola_dir = -2
+bola_dir = -1
 bola_dir_y = 1
 
 def draw():
@@ -70,14 +70,14 @@ def move_bola():
         bola_dir *= -1
         bola_dir_y *= -1
         score2 += 1
-        score2_img = pygame.image.load('score/' + str(score2) + ".png")
+        score2_img = pygame.image.load('img/' + str(score2) + ".png")
     elif bola_x > 1320:
         bola_x = 617
         bola_y = 337
         bola_dir *= -1
         bola_dir_y *= -1
         score1 += 1
-        score1_img = pygame.image.load('score/' + str(score1) + ".png")
+        score1_img = pygame.image.load('img/' + str(score1) + ".png")
 
 
 
