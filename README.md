@@ -1,2 +1,3 @@
 # Game de futebol produzido em Python
-![image](https://github.com/user-attachments/assets/34047cd7-1ec6-468d-be19-33904063b186)
+![image](https://github.com/user-attachments/assets/b7d193ba-649b-469e-ba7a-e7c0ffb17948)
+
