@@ -7,6 +7,7 @@ window = pygame.display.set_mode([1280,720])
 #aplicar o título da janela/display
 pygame.display.set_caption("Futebol SENAI")
 #criar variáveis para as imagens:
+win = pygame.image.load("img/10.png")
 campo = pygame.image.load("img/campo.png")
 jogador1 = pygame.image.load("img/player1.png")
 jogador1_y = 310
@@ -25,15 +26,18 @@ bola_x = 617
 bola_y = 337
 bola_dir = -1
 bola_dir_y = 1
-
 def draw():
-    #Carregar as img
-    window.blit(campo,(0,0))
-    window.blit(jogador1,(50, jogador1_y))
-    window.blit(jogador2,(1150,jogador2_y))
-    window.blit(bola,(bola_x,bola_y))
-    window.blit(score1_img,(500,50))
-    window.blit(score2_img,(710,50))
+    #Carregar as imagens
+    if score1 or score2 <= 9:
+        window.blit(campo,(0,0))
+        window.blit(jogador1,(50, jogador1_y))
+        window.blit(jogador2,(1150,jogador2_y))
+        window.blit(bola,(bola_x,bola_y))
+        window.blit(score1_img,(500,50))
+        window.blit(score2_img,(710,50))
+    else:
+        window.blit(win,(150,230))
+    
 
 def move_bola():
     global bola_x
@@ -102,7 +106,6 @@ def move_jogador2():
     global jogador2_y
     jogador2_y = bola_y      
 
-
 #para manter a janela aberta:
 loop = True
 while loop:
@@ -120,8 +123,6 @@ while loop:
                 jogador1_y_moveup = False
             if event.key == pygame.K_s:
                 jogador1_y_movedown = False
-            
-            
     draw()
     move_bola()
     move_jogador()
